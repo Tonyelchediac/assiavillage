@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Saint George Church - Assia</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="Assia/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="explore.css" />
+  </head>
+  <body>
+
+    <!-- header -->
+     <header>
+      <div class="back-btn"><a href="index.html">Back</a></div>
+     </header>
+
+    <!-- Home Section -->
+    <section id="home">
+      <h1>Saint George Church</h1>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+      <p>
+        <span>Saint Goerges Church:</span> <br />
+        Known as the Maronite Church of Saint George. It is a church that rises
+        900 meters above sea level, and is distinguished by its wonderful beauty
+        and large size, as it holds the first place in terms of the largest
+        monastery and church of Saint George in the Batroun district. It is
+        ranked among the first places as the most beautiful altars and
+        archaeological sites in Batroun and Lebanon. It is located on the hills
+        of the village and has the oldest picture of Saint George, as it is more
+        than 400 years old. It is the only church in Lebanon that has a picture
+        of Saint George with his head facing left. Saint George is the patron
+        saint of the parish, whom all the villagers respect and fear.
+        <br /><br />
+        <span>Its History:</span> <br />
+        The church was founded as a "large chapel" more than 500 years ago, and
+        then transformed into what it is today thanks to the villagers and the
+        parish priest, may God have mercy on him, Boulos Badran. Before reading
+        the Gospel on Sunday, every person present in the church would head to
+        the Lady of "Hidak Al-Qate'a", known today as the Lady of the Alaa,
+        carrying rocks and bringing them to build the Church of Saint George.
+        The columns next to the cathedral are what remains of the Mamluk
+        Citadel, where the church now stands.
+        <br /><br />
+        <span>Among the wonders of Saint George the Martyr:</span> <br />
+
+        Protecting the village from the Turkish soldiers who wanted to occupy
+        it, as he made the soldiers lose their way between the villages and
+        caused a strong wind storm, preventing them from knowing that they were
+        in Asia.
+        <br />
+        Protecting the village from deterrence and the Palestinians who wanted
+        to occupy the village, but they passed through the entire village and
+        went to the neighboring village without knowing that they were passing
+        through Asia.
+        <br />
+        Protecting the village from several diseases and epidemics.
+      </p>
+    </section>
+
+    <!-- More Information Section -->
+    <section id="more-info">
+      <h2>More Information</h2>
+      <div class="carousel-container">
+        <div class="carousel-images">
+          <img src="Assia/sg3.jpg" alt="Image 1" />
+          <img src="Assia/sg2.jpg" alt="Image 2" />
+          <img src="Assia/sg5.jpg" alt="Image 3" />
+          <img src="Assia/sg4.jpg" alt="Image 4" />
+          <img src="Assia/sg1.jpg" alt="Image 5" />
+        </div>
+        <div class="carousel-indicators">
+          <button class="active" onclick="goToSlide(0)"></button>
+          <button onclick="goToSlide(1)"></button>
+          <button onclick="goToSlide(2)"></button>
+          <button onclick="goToSlide(3)"></button>
+          <button onclick="goToSlide(4)"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Location Section -->
+    <section id="location">
+      <h2>Location</h2>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d853.4075434824023!2d35.78572556605556!3d34.21893259982288!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151f562cc7482b61%3A0xbf93eee6660e212!2sSaint%20Georges%20Church!5e1!3m2!1sen!2slb!4v1737125533084!5m2!1sen!2slb" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+
+    <!-- Footer Section -->
+<footer id="footer">
+  <div class="footer-content">
+    <p>&copy; 2025 Assia Village. All Rights Reserved.</p>
+    <div class="social-links">
+      <a href="https://www.instagram.com/liveloveassia" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+    </div>
+  </div>
+</footer>
+
+
+    <script>
+      let currentIndex = 0;
+      const images = document.querySelectorAll(".carousel-images img");
+      const indicators = document.querySelectorAll(
+        ".carousel-indicators button"
+      );
+
+      function goToSlide(index) {
+        currentIndex = index;
+        updateCarousel();
+      }
+
+      function updateCarousel() {
+        const width = images[0].clientWidth;
+        document.querySelector(
+          ".carousel-images"
+        ).style.transform = `translateX(${-currentIndex * width}px)`;
+        indicators.forEach((btn, i) =>
+          btn.classList.toggle("active", i === currentIndex)
+        );
+      }
+
+      function autoSlide() {
+        currentIndex = (currentIndex + 1) % images.length;
+        updateCarousel();
+      }
+
+      setInterval(autoSlide, 3000);
+    </script>
+  </body>
+</html>
