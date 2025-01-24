@@ -17,6 +17,16 @@ body {
   background-color: var(--bg-color);
 }
 
+::-webkit-scrollbar{
+  height: 0;
+  width: 0.2rem;
+}
+
+::-webkit-scrollbar-thumb{
+  background: var(--hover-color);
+  border-radius: 5rem;
+}
+
 /* header */
 
 header{
@@ -45,7 +55,6 @@ header .back-btn a{
 /* Home Section */
 #home {
 height: 100vh;
-background: url('Assia/saint georges church.jpg') center/cover no-repeat;
 display: flex;
 justify-content: center;
 align-items: center;
@@ -198,9 +207,6 @@ span{
 
 
 @media (max-width: 768px) {
-#home {
-background-position: top right;
-}
 #home h1{
 font-size: 4em;
 }
