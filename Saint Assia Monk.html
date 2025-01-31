@@ -72,13 +72,6 @@
           <img src="Assia/saint assia 4.jpg" alt="Image 4" />
           <img src="Assia/views 1.jpg" alt="Image 5" />
         </div>
-        <div class="carousel-indicators">
-          <button class="active" onclick="goToSlide(0)"></button>
-          <button onclick="goToSlide(1)"></button>
-          <button onclick="goToSlide(2)"></button>
-          <button onclick="goToSlide(3)"></button>
-          <button onclick="goToSlide(4)"></button>
-        </div>
       </div>
     </section>
 
@@ -108,34 +101,7 @@
       </div>
     </footer>
 
-    <script>
-      let currentIndex = 0;
-      const images = document.querySelectorAll(".carousel-images img");
-      const indicators = document.querySelectorAll(
-        ".carousel-indicators button"
-      );
+    <script src="discovery.js"></script>
 
-      function goToSlide(index) {
-        currentIndex = index;
-        updateCarousel();
-      }
-
-      function updateCarousel() {
-        const width = images[0].clientWidth;
-        document.querySelector(
-          ".carousel-images"
-        ).style.transform = `translateX(${-currentIndex * width}px)`;
-        indicators.forEach((btn, i) =>
-          btn.classList.toggle("active", i === currentIndex)
-        );
-      }
-
-      function autoSlide() {
-        currentIndex = (currentIndex + 1) % images.length;
-        updateCarousel();
-      }
-
-      setInterval(autoSlide, 3000);
-    </script>
   </body>
 </html>

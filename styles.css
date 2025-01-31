@@ -86,7 +86,7 @@ header nav ul li a:hover{
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url("Assia/assia with sunset.jpg") no-repeat center center;
+  background: url("Assia/134445578_162026985254118_6483924779611985629_n.jpg") no-repeat center center;
   height: 100vh;
   background-size: cover;
   background-attachment: fixed;
@@ -402,7 +402,7 @@ body.custom-alert-active {
 
 
 
-@media (max-width: 768px) {
+@media only screen and (max-width: 1268px) {
   header {
     height: 60px;
     padding: 0 20px;
