@@ -86,7 +86,7 @@ header nav ul li a:hover{
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url("Assia/134445578_162026985254118_6483924779611985629_n.jpg") no-repeat center center;
+  background: url("Assia/assia 1.jpg") no-repeat center center;
   height: 100vh;
   background-size: cover;
   background-attachment: fixed;
@@ -438,7 +438,7 @@ body.custom-alert-active {
   }
 
   .menu-checkbox:checked ~ .menu-toggle div{
-    background-color: var(--hover-color);
+    background-color: white;
   }
 
   .menu-checkbox:checked ~ .ALLSCREEN{
@@ -469,7 +469,7 @@ body.custom-alert-active {
   }
   
   .menu-toggle div {
-    background-color: white;
+    background-color: var(--hover-color);
     height: 4px;
     width: 100%;
     border-radius: 5px;

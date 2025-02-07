@@ -1,21 +1,26 @@
-let currentIndex = 0;
-const images = document.querySelectorAll(".carousel-images img");
+let slideIndex = 1;
+showSlides(slideIndex);
 
-function goToSlide(index) {
-  currentIndex = index;
-  updateCarousel();
+function plusSlides(n) {
+  showSlides(slideIndex += n);
 }
 
-function updateCarousel() {
-  const width = images[0].clientWidth;
-  document.querySelector(
-    ".carousel-images"
-  ).style.transform = `translateX(${-currentIndex * width}px)`;
+function currentSlide(n) {
+  showSlides(slideIndex = n);
 }
 
-function autoSlide() {
-  currentIndex = (currentIndex + 1) % images.length;
-  updateCarousel();
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
 }
-
-setInterval(autoSlide, 3000);
